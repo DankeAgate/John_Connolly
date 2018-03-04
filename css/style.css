@@ -1,65 +1,285 @@
-/* 
-    IBM In-house {Web Coder} course Assignment Snippet.
-    CSS styling slave file.
-    For internal IBM learning usage.
-*/
-
-
 /*  ----- HTML Body Styles -----  */
+
 body {
   /* Position: relative; */
   margin: 0;
   min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: raleway; 
+  background-image: url("../image/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   
-  /* Padding for top navbar fixed  */
-  padding-top: 75px; 
+  /* Padding for top navbar fixed 
+  padding-top: 75px;  */
 }
 html {
-  font-size: 14px;
-  height: 100%;
+  font-size: 15px;
+  height: 100%; 
+  max-width: 98vw; 
   box-sizing: border-box;
+ 
 }
 
-  nav > a > img {
-    height: 22px;
-  }
+.navbar{
+  background-color: rgba(255, 0, 0, 0.767);
+}
 
-  /* Responsive typography */
-  /* 
-  @include media-breakpoint-up(sm) {
-    html {
-      font-size: 16px;
+.navbar-toggler{
+  background-color: rgba(0, 0, 0, 0.651);
+}
+
+.nav-link {
+  color: black;
+  font-size: 20px;
+}
+
+/* Jumbotron */
+
+.jumbotron{
+  background-image: url("../image/John Connolly.jpg");
+  display: block;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-color: black;
+  background-size: contain;
+  color: white;
+  text-align: left;
+  font-family: raleway;
+  text-shadow:5px 5px 6px red;
+  font-size: 5vw;
     }
-  }
 
-  @include media-breakpoint-up(md) {
-    html {
-      font-size: 20px;
-    }
-  }
+.author{
+font-size: 10vw;
+color: red;
+font-family: raleway; 
+text-shadow: 5px 5px 6px white;
+}
 
-  @include media-breakpoint-up(lg) {
-    html {
-      font-size: 28px;
-    } 
-  */
+.about{
+  color: red;
+  text-shadow: 1px 1px 2px white;
+  text-align: center;
+}
+.container {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
 
-  /* Jumbotron */
-  .jumbotron{
-    background-image: url("../image/morningtree.jpg");
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    color: white;
-  }
+}
+  
+.image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
 
-  /* Box-sizing */
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  overflow: auto;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+  
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%); */
+  text-align: left;
+  margin: 10px;
+}
+
+.img-thumbnail{
+  background-color: black;
+  border-color: black;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mytext{
+  color: white;
+  text-align: center;
+  text-shadow: 10px 10px 3px black;
+  margin: 20px;
+}
+
+.card-body{
+  color: red;
+  text-shadow:1px 1px 2px white;
+}
+
+.more{
+  color: red;
+  font-size: 20px;
+}
+.modalDialog {
+  position: fixed;
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  max-width: 50%;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+  color: black;
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: red; }
+
+/* Position the image container (needed to position the left and right arrows) */
+.container1 {
+  position: relative;
+  padding-left: 10px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  font-size: 20px;
+  background-color: black;
+  padding: 2px 16px;
+  color: red;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.mybox{
+  font-size: 16px;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+  /* Box-sizing
   .selector-for-some-widget {
       box-sizing: content-box;
-  }
+  } */
 
   /* LAYOUT - Responsive breakpoints */
   /* // Extra small devices (portrait phones, less than 576px) */
